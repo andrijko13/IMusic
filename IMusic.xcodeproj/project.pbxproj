@@ -7,15 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3204C49A1F5917B20055AEEF /* Styler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204C4971F5917B10055AEEF /* Styler.swift */; };
+		3204C49B1F5917B20055AEEF /* UIScrollView+MaxSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204C4981F5917B20055AEEF /* UIScrollView+MaxSubview.swift */; };
+		3204C49C1F5917B20055AEEF /* UIViewController+StatusBarStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204C4991F5917B20055AEEF /* UIViewController+StatusBarStyling.swift */; };
+		3204C49E1F59FE5D0055AEEF /* MP3Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3204C49D1F59FE5D0055AEEF /* MP3Player.swift */; };
+		322B17AD1EF8C1100010AC8A /* IMDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322B17AC1EF8C1100010AC8A /* IMDownloader.swift */; };
+		322B17B01EF8C7D70010AC8A /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322B17AF1EF8C7D70010AC8A /* DownloadsViewController.swift */; };
+		322B17B21EF8D45D0010AC8A /* MusicCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322B17B11EF8D45D0010AC8A /* MusicCollection.swift */; };
 		325BDCA31EF8BBD1001E08B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BDCA21EF8BBD1001E08B7 /* AppDelegate.swift */; };
 		325BDCA51EF8BBD1001E08B7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BDCA41EF8BBD1001E08B7 /* FirstViewController.swift */; };
 		325BDCA71EF8BBD1001E08B7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BDCA61EF8BBD1001E08B7 /* SecondViewController.swift */; };
 		325BDCAA1EF8BBD1001E08B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325BDCA81EF8BBD1001E08B7 /* Main.storyboard */; };
 		325BDCAC1EF8BBD1001E08B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325BDCAB1EF8BBD1001E08B7 /* Assets.xcassets */; };
 		325BDCAF1EF8BBD1001E08B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325BDCAD1EF8BBD1001E08B7 /* LaunchScreen.storyboard */; };
+		325BDCB71EF8BF12001E08B7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325BDCB61EF8BF12001E08B7 /* MainTabBarController.swift */; };
+		32C730BC1EF9F0900007AC90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C730BB1EF9F0900007AC90 /* MapKit.framework */; };
+		32C730DB1EFA1E1B0007AC90 /* NSMutableArray+STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730C91EFA1E1B0007AC90 /* NSMutableArray+STKAudioPlayer.m */; };
+		32C730DC1EFA1E1B0007AC90 /* STKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730CB1EFA1E1B0007AC90 /* STKAudioPlayer.m */; };
+		32C730DD1EFA1E1B0007AC90 /* STKAutoRecoveringHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730CD1EFA1E1B0007AC90 /* STKAutoRecoveringHTTPDataSource.m */; };
+		32C730DE1EFA1E1B0007AC90 /* STKCoreFoundationDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730CF1EFA1E1B0007AC90 /* STKCoreFoundationDataSource.m */; };
+		32C730DF1EFA1E1B0007AC90 /* STKDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730D11EFA1E1B0007AC90 /* STKDataSource.m */; };
+		32C730E01EFA1E1B0007AC90 /* STKDataSourceWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730D31EFA1E1B0007AC90 /* STKDataSourceWrapper.m */; };
+		32C730E11EFA1E1B0007AC90 /* STKHTTPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730D51EFA1E1B0007AC90 /* STKHTTPDataSource.m */; };
+		32C730E21EFA1E1B0007AC90 /* STKLocalFileDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730D71EFA1E1B0007AC90 /* STKLocalFileDataSource.m */; };
+		32C730E31EFA1E1B0007AC90 /* STKQueueEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C730D91EFA1E1B0007AC90 /* STKQueueEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3204C4971F5917B10055AEEF /* Styler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styler.swift; sourceTree = "<group>"; };
+		3204C4981F5917B20055AEEF /* UIScrollView+MaxSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+MaxSubview.swift"; sourceTree = "<group>"; };
+		3204C4991F5917B20055AEEF /* UIViewController+StatusBarStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBarStyling.swift"; sourceTree = "<group>"; };
+		3204C49D1F59FE5D0055AEEF /* MP3Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MP3Player.swift; sourceTree = "<group>"; };
+		322B17AC1EF8C1100010AC8A /* IMDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMDownloader.swift; sourceTree = "<group>"; };
+		322B17AF1EF8C7D70010AC8A /* DownloadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		322B17B11EF8D45D0010AC8A /* MusicCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCollection.swift; sourceTree = "<group>"; };
 		325BDC9F1EF8BBD1001E08B7 /* IMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325BDCA21EF8BBD1001E08B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325BDCA41EF8BBD1001E08B7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +49,27 @@
 		325BDCAB1EF8BBD1001E08B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		325BDCAE1EF8BBD1001E08B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		325BDCB01EF8BBD1001E08B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325BDCB61EF8BF12001E08B7 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		32C730BB1EF9F0900007AC90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		32C730C81EFA1E1B0007AC90 /* NSMutableArray+STKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+STKAudioPlayer.h"; sourceTree = "<group>"; };
+		32C730C91EFA1E1B0007AC90 /* NSMutableArray+STKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+STKAudioPlayer.m"; sourceTree = "<group>"; };
+		32C730CA1EFA1E1B0007AC90 /* STKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKAudioPlayer.h; sourceTree = "<group>"; };
+		32C730CB1EFA1E1B0007AC90 /* STKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKAudioPlayer.m; sourceTree = "<group>"; };
+		32C730CC1EFA1E1B0007AC90 /* STKAutoRecoveringHTTPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKAutoRecoveringHTTPDataSource.h; sourceTree = "<group>"; };
+		32C730CD1EFA1E1B0007AC90 /* STKAutoRecoveringHTTPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKAutoRecoveringHTTPDataSource.m; sourceTree = "<group>"; };
+		32C730CE1EFA1E1B0007AC90 /* STKCoreFoundationDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKCoreFoundationDataSource.h; sourceTree = "<group>"; };
+		32C730CF1EFA1E1B0007AC90 /* STKCoreFoundationDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKCoreFoundationDataSource.m; sourceTree = "<group>"; };
+		32C730D01EFA1E1B0007AC90 /* STKDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKDataSource.h; sourceTree = "<group>"; };
+		32C730D11EFA1E1B0007AC90 /* STKDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKDataSource.m; sourceTree = "<group>"; };
+		32C730D21EFA1E1B0007AC90 /* STKDataSourceWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKDataSourceWrapper.h; sourceTree = "<group>"; };
+		32C730D31EFA1E1B0007AC90 /* STKDataSourceWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKDataSourceWrapper.m; sourceTree = "<group>"; };
+		32C730D41EFA1E1B0007AC90 /* STKHTTPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKHTTPDataSource.h; sourceTree = "<group>"; };
+		32C730D51EFA1E1B0007AC90 /* STKHTTPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKHTTPDataSource.m; sourceTree = "<group>"; };
+		32C730D61EFA1E1B0007AC90 /* STKLocalFileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKLocalFileDataSource.h; sourceTree = "<group>"; };
+		32C730D71EFA1E1B0007AC90 /* STKLocalFileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKLocalFileDataSource.m; sourceTree = "<group>"; };
+		32C730D81EFA1E1B0007AC90 /* STKQueueEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKQueueEntry.h; sourceTree = "<group>"; };
+		32C730D91EFA1E1B0007AC90 /* STKQueueEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKQueueEntry.m; sourceTree = "<group>"; };
+		32C730DA1EFA1E1B0007AC90 /* StreamingKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StreamingKit-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C730BC1EF9F0900007AC90 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +89,7 @@
 			children = (
 				325BDCA11EF8BBD1001E08B7 /* IMusic */,
 				325BDCA01EF8BBD1001E08B7 /* Products */,
+				B08DCD382A51914D00901507 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +104,58 @@
 		325BDCA11EF8BBD1001E08B7 /* IMusic */ = {
 			isa = PBXGroup;
 			children = (
+				3204C4971F5917B10055AEEF /* Styler.swift */,
+				3204C4981F5917B20055AEEF /* UIScrollView+MaxSubview.swift */,
+				3204C4991F5917B20055AEEF /* UIViewController+StatusBarStyling.swift */,
 				325BDCA21EF8BBD1001E08B7 /* AppDelegate.swift */,
 				325BDCA41EF8BBD1001E08B7 /* FirstViewController.swift */,
+				325BDCB61EF8BF12001E08B7 /* MainTabBarController.swift */,
 				325BDCA61EF8BBD1001E08B7 /* SecondViewController.swift */,
+				322B17AF1EF8C7D70010AC8A /* DownloadsViewController.swift */,
+				322B17AC1EF8C1100010AC8A /* IMDownloader.swift */,
+				322B17B11EF8D45D0010AC8A /* MusicCollection.swift */,
+				3204C49D1F59FE5D0055AEEF /* MP3Player.swift */,
 				325BDCA81EF8BBD1001E08B7 /* Main.storyboard */,
+				32C730C71EFA1E1B0007AC90 /* StreamingKit */,
 				325BDCAB1EF8BBD1001E08B7 /* Assets.xcassets */,
 				325BDCAD1EF8BBD1001E08B7 /* LaunchScreen.storyboard */,
 				325BDCB01EF8BBD1001E08B7 /* Info.plist */,
 			);
 			path = IMusic;
+			sourceTree = "<group>";
+		};
+		32C730C71EFA1E1B0007AC90 /* StreamingKit */ = {
+			isa = PBXGroup;
+			children = (
+				32C730C81EFA1E1B0007AC90 /* NSMutableArray+STKAudioPlayer.h */,
+				32C730C91EFA1E1B0007AC90 /* NSMutableArray+STKAudioPlayer.m */,
+				32C730CA1EFA1E1B0007AC90 /* STKAudioPlayer.h */,
+				32C730CB1EFA1E1B0007AC90 /* STKAudioPlayer.m */,
+				32C730CC1EFA1E1B0007AC90 /* STKAutoRecoveringHTTPDataSource.h */,
+				32C730CD1EFA1E1B0007AC90 /* STKAutoRecoveringHTTPDataSource.m */,
+				32C730CE1EFA1E1B0007AC90 /* STKCoreFoundationDataSource.h */,
+				32C730CF1EFA1E1B0007AC90 /* STKCoreFoundationDataSource.m */,
+				32C730D01EFA1E1B0007AC90 /* STKDataSource.h */,
+				32C730D11EFA1E1B0007AC90 /* STKDataSource.m */,
+				32C730D21EFA1E1B0007AC90 /* STKDataSourceWrapper.h */,
+				32C730D31EFA1E1B0007AC90 /* STKDataSourceWrapper.m */,
+				32C730D41EFA1E1B0007AC90 /* STKHTTPDataSource.h */,
+				32C730D51EFA1E1B0007AC90 /* STKHTTPDataSource.m */,
+				32C730D61EFA1E1B0007AC90 /* STKLocalFileDataSource.h */,
+				32C730D71EFA1E1B0007AC90 /* STKLocalFileDataSource.m */,
+				32C730D81EFA1E1B0007AC90 /* STKQueueEntry.h */,
+				32C730D91EFA1E1B0007AC90 /* STKQueueEntry.m */,
+				32C730DA1EFA1E1B0007AC90 /* StreamingKit-Prefix.pch */,
+			);
+			path = StreamingKit;
+			sourceTree = "<group>";
+		};
+		B08DCD382A51914D00901507 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32C730BB1EF9F0900007AC90 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +192,14 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3Z9S567B34;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -140,9 +239,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C730DB1EFA1E1B0007AC90 /* NSMutableArray+STKAudioPlayer.m in Sources */,
+				32C730E11EFA1E1B0007AC90 /* STKHTTPDataSource.m in Sources */,
 				325BDCA71EF8BBD1001E08B7 /* SecondViewController.swift in Sources */,
+				32C730E31EFA1E1B0007AC90 /* STKQueueEntry.m in Sources */,
 				325BDCA31EF8BBD1001E08B7 /* AppDelegate.swift in Sources */,
+				322B17B01EF8C7D70010AC8A /* DownloadsViewController.swift in Sources */,
+				325BDCB71EF8BF12001E08B7 /* MainTabBarController.swift in Sources */,
+				322B17AD1EF8C1100010AC8A /* IMDownloader.swift in Sources */,
+				32C730DD1EFA1E1B0007AC90 /* STKAutoRecoveringHTTPDataSource.m in Sources */,
+				32C730DF1EFA1E1B0007AC90 /* STKDataSource.m in Sources */,
+				3204C49B1F5917B20055AEEF /* UIScrollView+MaxSubview.swift in Sources */,
+				322B17B21EF8D45D0010AC8A /* MusicCollection.swift in Sources */,
+				32C730DE1EFA1E1B0007AC90 /* STKCoreFoundationDataSource.m in Sources */,
+				3204C49C1F5917B20055AEEF /* UIViewController+StatusBarStyling.swift in Sources */,
+				3204C49A1F5917B20055AEEF /* Styler.swift in Sources */,
+				32C730DC1EFA1E1B0007AC90 /* STKAudioPlayer.m in Sources */,
+				32C730E01EFA1E1B0007AC90 /* STKDataSourceWrapper.m in Sources */,
 				325BDCA51EF8BBD1001E08B7 /* FirstViewController.swift in Sources */,
+				32C730E21EFA1E1B0007AC90 /* STKLocalFileDataSource.m in Sources */,
+				3204C49E1F59FE5D0055AEEF /* MP3Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +380,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3Z9S567B34;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KDEAudioPlayer",
+				);
 				INFOPLIST_FILE = IMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DropGeeks.IMusic;
@@ -277,6 +397,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3Z9S567B34;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/KDEAudioPlayer",
+				);
 				INFOPLIST_FILE = IMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DropGeeks.IMusic;
@@ -304,6 +428,7 @@
 				325BDCB51EF8BBD1001E08B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

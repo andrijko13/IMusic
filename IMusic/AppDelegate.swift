@@ -15,6 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        statusBar.tintColor = Styler.main.colorForKey(.errorRed)
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+                
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let docsdir = paths[0]
+        
+        let songTitle = URL(fileURLWithPath: "\(docsdir)/music/", isDirectory: true)
+        
+        do {
+            try FileManager.default.createDirectory(at: songTitle, withIntermediateDirectories: false, attributes: nil)
+        } catch let error as NSError {
+            print(error.localizedDescription);
+        }
+        
+        MusicCollection.sharedInstance.reload()
+        
         // Override point for customization after application launch.
         return true
     }

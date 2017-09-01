@@ -8,18 +8,111 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UISearchBarDelegate, UIWebViewDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    var backgroundView: UIView! = nil
+    
+    @IBAction func downloadButtonClicked(_ sender: Any) {
+        let youtubeLink: String = searchBar.text!
+        let url: String = "https://www.youtubeinmp3.com/fetch/?format=JSON&video=\(youtubeLink)"
+        
+        let downloader: IMDownloader = IMDownloader.sharedInstance
+        let data: Dictionary<String, Any>? = downloader.getSongData(fromURL: url)
+        
+        let link: String? = data!["link"] as? String
+        let title: String? = data!["title"] as? String
+        
+        if (link != nil && title != nil) {
+            downloader.downloadSong(fromURL: link!, withTitle: title!)
+        } else {
+            print("Failed to fetch info")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        webView.isHidden = true
+        webView.scrollView.bounces = false
+        spinner.activityIndicatorViewStyle = .white
+        webView.delegate = self
+        
+        setStatusBarColor(.lightGray)
+        searchBar.isTranslucent = false
+        searchBar.tintColor = Styler.main.colorForKey(.lightGray)
+        searchBar.barTintColor = Styler.main.colorForKey(.tabBarGray)
+        
+        backgroundView = UIView(frame: webView.frame)
+        backgroundView.center = webView.center
+        backgroundView.backgroundColor = UIColor.darkGray
+        self.view.addSubview(backgroundView)
+        self.view.bringSubview(toFront: spinner)
+        spinner.activityIndicatorViewStyle = .white
+        spinner.color = UIColor.white
+        spinner.startAnimating()
+        
+        let url = URL(string: "https://www.youtube.com/")
+        if let unwrappedURL = url {
+            
+            let request = URLRequest(url: unwrappedURL)
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: request) { [weak self] (data, response, error) in
+                
+                guard let strongSelf = self else { return }
+                
+                if error == nil {
+                    
+                    strongSelf.webView.loadRequest(request)
+                    
+                } else {
+                    
+                    print("ERROR: \(error)")
+                    
+                }
+            }
+            
+            task.resume()
+        }
+        
+        webView.isHidden = false
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        backgroundView.isHidden = false
+        spinner.startAnimating()
+        spinner.isHidden = false
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        backgroundView.isHidden = true
+        spinner.stopAnimating()
+        spinner.isHidden = true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
 
-
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
 }
 
