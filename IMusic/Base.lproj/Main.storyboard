@@ -71,7 +71,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="My Downloads" id="53q-na-ifq">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="1f4-AC-WpM"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1f4-AC-WpM"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -157,12 +157,12 @@
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnx-Tz-dTi">
-                                <rect key="frame" x="0.0" y="559" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="559" width="190" height="58"/>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.50196078430000002" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="Fbs-GE-Hb4"/>
                                 </constraints>
-                                <state key="normal" title="Download">
+                                <state key="normal" title="Search">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -172,16 +172,31 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7I6-s2-vbz">
                                 <rect key="frame" x="177" y="301" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZQ-5u-xNX">
+                                <rect key="frame" x="189" y="559" width="186" height="58"/>
+                                <color key="backgroundColor" red="0.049626229459999997" green="1" blue="0.32032687939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="fUV-Pt-Cz6"/>
+                                    <constraint firstAttribute="width" constant="186" id="ugp-Vv-wdz"/>
+                                </constraints>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadMp3Clicked:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="on3-FV-Gf5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Dnx-Tz-dTi" firstAttribute="trailing" secondItem="fdQ-LJ-NbJ" secondAttribute="trailing" id="28T-bJ-bS5"/>
+                            <constraint firstItem="Dnx-Tz-dTi" firstAttribute="trailing" secondItem="fdQ-LJ-NbJ" secondAttribute="trailing" constant="-185" id="28T-bJ-bS5"/>
                             <constraint firstItem="tLh-7Q-aPo" firstAttribute="top" secondItem="Cax-0X-FBX" secondAttribute="bottom" id="9Pi-UB-UoH"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="fdQ-LJ-NbJ" secondAttribute="bottom" id="Azz-pK-CNl"/>
+                            <constraint firstItem="kZQ-5u-xNX" firstAttribute="baseline" secondItem="Dnx-Tz-dTi" secondAttribute="baseline" id="DeA-Jh-cHR"/>
                             <constraint firstItem="tLh-7Q-aPo" firstAttribute="trailing" secondItem="4fj-9Q-uak" secondAttribute="trailing" id="DfC-qu-shi"/>
                             <constraint firstItem="4fj-9Q-uak" firstAttribute="top" secondItem="tLh-7Q-aPo" secondAttribute="bottom" id="DlS-Pg-3d2"/>
                             <constraint firstItem="tLh-7Q-aPo" firstAttribute="centerY" secondItem="7I6-s2-vbz" secondAttribute="centerY" id="Dpr-Pl-tHZ"/>
-                            <constraint firstItem="4fj-9Q-uak" firstAttribute="trailing" secondItem="Dnx-Tz-dTi" secondAttribute="trailing" id="FF8-CP-s0K"/>
+                            <constraint firstItem="4fj-9Q-uak" firstAttribute="trailing" secondItem="Dnx-Tz-dTi" secondAttribute="trailing" constant="185" id="FF8-CP-s0K"/>
                             <constraint firstItem="fdQ-LJ-NbJ" firstAttribute="top" secondItem="Dnx-Tz-dTi" secondAttribute="bottom" id="HEN-qX-aUL"/>
                             <constraint firstItem="Cax-0X-FBX" firstAttribute="leading" secondItem="tLh-7Q-aPo" secondAttribute="leading" id="RUl-8J-eih"/>
                             <constraint firstItem="tLh-7Q-aPo" firstAttribute="leading" secondItem="4fj-9Q-uak" secondAttribute="leading" id="SRQ-88-fll"/>
@@ -192,6 +207,7 @@
                             <constraint firstItem="Cax-0X-FBX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="dH8-cQ-E5a"/>
                             <constraint firstItem="Dnx-Tz-dTi" firstAttribute="top" secondItem="4fj-9Q-uak" secondAttribute="bottom" id="hm4-lr-tfz"/>
                             <constraint firstItem="Cax-0X-FBX" firstAttribute="trailing" secondItem="tLh-7Q-aPo" secondAttribute="trailing" id="oEA-0U-SYT"/>
+                            <constraint firstItem="kZQ-5u-xNX" firstAttribute="trailing" secondItem="4fj-9Q-uak" secondAttribute="trailing" id="p4z-kQ-fev"/>
                             <constraint firstItem="4fj-9Q-uak" firstAttribute="leading" secondItem="Dnx-Tz-dTi" secondAttribute="leading" id="tHO-aT-jNm"/>
                             <constraint firstItem="Cax-0X-FBX" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="xto-qC-LM4"/>
                         </constraints>

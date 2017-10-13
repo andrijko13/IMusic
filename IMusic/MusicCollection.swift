@@ -22,8 +22,10 @@ class MusicCollection: NSObject {
         songs = fetchAll()
     }
     
-    func reload() {
+    @discardableResult
+    func reload() -> MusicCollection {
         songs = fetchAll()
+        return self
     }
 
     func getAll() -> [String] {

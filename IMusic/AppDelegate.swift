@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var mp3player: MP3Player! = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -32,10 +34,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error.localizedDescription);
         }
         
-        MusicCollection.sharedInstance.reload()
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.defaultToSpeaker)
+        } catch let error as NSError {
+            print(error.description)
+        }
         
+        MusicCollection.sharedInstance.reload()
+        mp3player = MP3Player()
+        
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.nextTrackCommand.isEnabled = true
+        commandCenter.nextTrackCommand.addTarget(self, action:#selector(playNext))
+        
+        commandCenter.previousTrackCommand.isEnabled = true
+        commandCenter.previousTrackCommand.addTarget(self, action: #selector(playPrevious))
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget(self, action: #selector(pause))
+        
+        commandCenter.stopCommand.isEnabled = true
+        commandCenter.stopCommand.addTarget(self, action: #selector(stop))
+        
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget(self, action: #selector(play))
+        
+        commandCenter.togglePlayPauseCommand.isEnabled = true
+        commandCenter.togglePlayPauseCommand.addTarget(self, action: #selector(playPause))
+
         // Override point for customization after application launch.
         return true
+    }
+    
+    func play() {
+        mp3player.play()
+    }
+    
+    func playPause() {
+        if mp3player.player?.isPlaying == true {
+            mp3player.pause()
+        } else if mp3player.player?.isPlaying == false {
+            mp3player.play()
+        }
+    }
+    
+    func playNext() {
+        mp3player.nextSong(songFinishedPlaying: true)
+    }
+    
+    func playPrevious() {
+        if mp3player.getCurrentTimeInSeconds() < 2 {
+            mp3player.currentSong()
+        } else {
+            mp3player.previousSong()
+        }
+    }
+    
+    func pause() {
+        mp3player.pause()
+    }
+    
+    func stop() {
+        mp3player.stop()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

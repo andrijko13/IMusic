@@ -18,7 +18,6 @@ class IMDownloader: NSObject, NSURLConnectionDelegate {
         let request1: URLRequest = URLRequest(url: url)
         let response: AutoreleasingUnsafeMutablePointer<URLResponse?>? = nil
         
-        
         do{
             let dataVal = try NSURLConnection.sendSynchronousRequest(request1, returning: response)
             

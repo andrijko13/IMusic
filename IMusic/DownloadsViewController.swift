@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class DownloadsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -24,10 +25,12 @@ class DownloadsViewController: UIViewController, UITableViewDelegate, UITableVie
         navBar.barTintColor = Styler.main.colorForKey(.lightGray)
         searchBar.barTintColor = Styler.main.colorForKey(.tabBarGray)
         
+        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+        mp3player = mainDelegate.mp3player
+        
         navBar.setBackgroundImage(UIImage(), for: .default)
         navBar.shadowImage = UIImage()
-        
-        mp3player = MP3Player()
+                
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -48,6 +51,7 @@ class DownloadsViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // did select
         mp3player.play(song: songs[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,6 +62,33 @@ class DownloadsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return songs.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+        
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            let docsdir = paths[0]
+            let songName = MusicCollection.sharedInstance.getAll()[indexPath.row]
+            
+            let songPath = "\(docsdir)/music/\(songName)"
+            let fileManager = FileManager.default
+            
+            do {
+                try fileManager.removeItem(atPath: songPath)
+            }
+            catch let error as NSError {
+                print("Error when deletinf file: \(error)")
+            }
+            
+            songs = MusicCollection.sharedInstance.getAll()
+            songsTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

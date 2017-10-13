@@ -16,21 +16,78 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UIWebViewDele
     
     var backgroundView: UIView! = nil
     
+    var currentSong: String = ""
+    
+    @IBAction func downloadMp3Clicked(_ sender: Any) {
+        IMDownloader.sharedInstance.downloadSong(fromURL: searchBar.text!, withTitle: currentSong)
+        let url = URL(string: "https://www.youtube.com/")
+        if let unwrappedURL = url {
+            
+            let request = URLRequest(url: unwrappedURL)
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: request) { [weak self] (data, response, error) in
+                
+                guard let strongSelf = self else { return }
+                
+                if error == nil {
+                    
+                    strongSelf.webView.loadRequest(request)
+                    
+                } else {
+                    
+                    print("ERROR: \(error)")
+                    
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
     @IBAction func downloadButtonClicked(_ sender: Any) {
         let youtubeLink: String = searchBar.text!
-        let url: String = "https://www.youtubeinmp3.com/fetch/?format=JSON&video=\(youtubeLink)"
-        
         let downloader: IMDownloader = IMDownloader.sharedInstance
-        let data: Dictionary<String, Any>? = downloader.getSongData(fromURL: url)
         
-        let link: String? = data!["link"] as? String
-        let title: String? = data!["title"] as? String
+        let data: Dictionary<String, Any>? = downloader.getSongData(fromURL: "https://www.youtubeinmp3.com/fetch/?format=JSON&video=\(youtubeLink)")
+        let component = (youtubeLink as NSString).lastPathComponent
+        var identity: String = ""
         
-        if (link != nil && title != nil) {
-            downloader.downloadSong(fromURL: link!, withTitle: title!)
+        if let range = component.range(of: "=") {
+            identity = component.substring(from: range.upperBound)
         } else {
-            print("Failed to fetch info")
+            identity = component
         }
+        
+        let url = URL(string: "https://www.yt-download.org/api-console/audio/\(identity)")
+        if let unwrappedURL = url {
+            
+            let request = URLRequest(url: unwrappedURL)
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: request) { [weak self] (data, response, error) in
+                
+                guard let strongSelf = self else { return }
+                
+                if error == nil {
+                    
+                    strongSelf.webView.loadRequest(request)
+                    
+                } else {
+                    
+                    print("ERROR: \(error)")
+                    
+                }
+            }
+            
+            task.resume()
+        }
+
+        var title = ""
+        if let strongData = data {
+            currentSong = strongData["title"] as! String
+        }
+//        downloader.downloadSong(fromURL: link!, withTitle: title!)
     }
     
     override func viewDidLoad() {

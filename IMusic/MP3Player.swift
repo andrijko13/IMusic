@@ -19,20 +19,24 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         super.init()
         queueTrack()
     }
-    
+
     func queueTrack(){
         if (player != nil) {
             player = nil
         }
-        
+
+        tracks = MusicCollection.sharedInstance.getAll()
+        guard tracks.count > 0 else { return }
+
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let docsdir = paths[0]
 
         let songPath = "\(docsdir)/music/\(tracks[currentTrackIndex])"
         let url = NSURL.fileURL(withPath: songPath)
-        
+
         do {
             try player = AVAudioPlayer(contentsOf: url)
+
             player?.delegate = self
             player?.prepareToPlay()
         } catch let error as NSError {
@@ -41,6 +45,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     }
     
     func play() {
+        guard tracks.count > 0 else { return }
         if player?.isPlaying == false {
             player?.play()
         } else {
@@ -50,7 +55,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     }
     
     func play(song: String) {
-        if let index = tracks.index(of: song) {
+        if let index = MusicCollection.sharedInstance.getAll().index(of: song) {
             currentTrackIndex = index
             queueTrack()
             play()
@@ -104,6 +109,20 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         }
     }
     
+    func currentSong(){
+        var playerWasPlaying = false
+        if player?.isPlaying == true {
+            player?.stop()
+            playerWasPlaying = true
+        }
+        
+        queueTrack()
+        if playerWasPlaying {
+            player?.play()
+        }
+    }
+
+    
     func getCurrentTrackName() -> String {
         let trackName = tracks[currentTrackIndex]
         return trackName
@@ -117,6 +136,14 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
             minutes = (Int(time) / 60) % 60
         }
         return String(format: "%0.2d:%0.2d",minutes,seconds)
+    }
+    
+    func getCurrentTimeInSeconds() -> Int {
+        var seconds = 0
+        if let time = player?.currentTime {
+            seconds = Int(time)
+        }
+        return seconds
     }
     
     func getProgress()->Float{
@@ -133,7 +160,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         player?.volume = volume
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool){
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag == true {
             nextSong(songFinishedPlaying: true)
         }
